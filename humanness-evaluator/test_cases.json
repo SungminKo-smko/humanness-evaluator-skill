@@ -1,0 +1,16 @@
+{
+  "test_cases": [
+    {
+      "id": "trastuzumab_vh",
+      "description": "Trastuzumab (Herceptin) VH — FDA-approved humanized mAb, expected >70%",
+      "vh_sequence": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "expected_humanness_min": 70.0
+    },
+    {
+      "id": "murine_control",
+      "description": "Murine-origin sequence — expected low humanness (<40%)",
+      "vh_sequence": "EVKLVESGGGLVQPGRSLKLSCAASGFTFSSYAMSWVRQTPEKRLEWVATISSGGSYTYYPDSVKGRFTISRDNAKNTLYLQMSSLKSEDTAMYYCARGYYYYYYAMDYWGQGTSVTVSS",
+      "expected_humanness_max": 40.0
+    }
+  ]
+}
