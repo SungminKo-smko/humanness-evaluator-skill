@@ -9,12 +9,18 @@ Provides:
 """
 
 import sys
+import os
 import pandas as pd
 from pathlib import Path
 from typing import Dict, List, Optional, Union
 import traceback
 
-# Try to import BioPhiSkill
+# Add skill root to path so bundled agent_api and biophi are found
+_SKILL_ROOT = Path(__file__).resolve().parent.parent
+if str(_SKILL_ROOT) not in sys.path:
+    sys.path.insert(0, str(_SKILL_ROOT))
+
+# Try to import bundled agent_api
 try:
     from agent_api import evaluate_humanness, humanize_antibody_sequence
     BIOPHI_AVAILABLE = True
@@ -37,9 +43,8 @@ class HumannessEvaluator:
         
         if not BIOPHI_AVAILABLE:
             raise ImportError(
-                "BioPhiSkill not found. Install with:\n"
-                "  git clone https://github.com/Shaperon-AIDEN/BioPhiSkill.git\n"
-                "  cd BioPhiSkill && bash install.sh\n"
+                "Dependencies not found. Run the installer first:\n"
+                "  bash install.sh\n"
                 "  conda activate biophi"
             )
     
