@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "humanness-evaluator": {
+      "url": "https://<YOUR_CONTAINER_APP_FQDN>/sse"
+    }
+  }
+}
